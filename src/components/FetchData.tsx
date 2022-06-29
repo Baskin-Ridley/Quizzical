@@ -1,3 +1,4 @@
+ // @ts-nocheck
 import React from 'react'
 
 // fetches data from the API
@@ -5,17 +6,35 @@ import React from 'react'
 
 
 function FetchData() {
-    React.useEffect(() => {
-        fetch("https://opentdb.com/api.php?amount=5")
-          .then(res => res.json())
-          .then(data => console.log(data));
-    
-      }, []);
-      return(
-        <div>
-            <h1>FetchData</h1>
-        </div>
+  const [quizData, setQuizData] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple')
+      .then(response => response.json())
+      .then(data => {
+        setQuizData(data.results);
+        
+      })
+      
+  }, []);
+
+  const mapQuiz = quizData.map((quiz, index) => {
+    return (
+      <div key={index}>
+        <h1>{quiz.question}</h1>
+        <h2>{quiz.correct_answer}</h2>
+        <h2>{quiz.incorrect_answers}</h2>
+      </div>
     )
+  }
+  )
+  
+
+  return(
+    <div>
+      {mapQuiz}
+    </div>
+  ) 
 }
 
 function DisplayData(){
