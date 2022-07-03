@@ -1,9 +1,10 @@
+
 import React from 'react'
 
 // This will be the form that the user will fill out to create a quiz
 
-const SettingSelect = (props: { label: any; }) => {
-    const { label } = props;
+const SettingSelect = (props: { label: any; options: any; }) => {
+    const { label, options } = props;
     const [value, setValue] = React.useState('');
 
     const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
@@ -14,10 +15,9 @@ const SettingSelect = (props: { label: any; }) => {
     <div className="form">
       <label>{label}</label>
       <select value={value} onChange={handleChange} >
-        <option value=""></option>
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        {options.map((option: { id: any, name: any}) => (
+          <option key={option.id} value={option.name}>{option.name}</option>
+        ))}
 
       </select>
 

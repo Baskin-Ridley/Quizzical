@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import SettingSelect from '../components/SettingSelect'
 import { useAxios } from '../hooks/useAxios'
@@ -9,11 +11,34 @@ const Settings = () => {
         e.preventDefault();
         console.log("Submitted")
     }
+
+    //Consider coming back to add a loading svg here
+    if (loading) {
+        return <div>Loading...</div>
+    }
+    
+    if (error) {
+        return <div>Error</div>
+    }
+
+    const difficultyOptions = [
+        { value: "easy", label: "Easy" , name: "Easy"},
+        { value: "medium", label: "Medium", name: "Medium"},
+        { value: "hard", label: "Hard", name: "Hard"} 
+    ]
+
+    const typeOptions = [
+        { value: "multiple", label: "Multiple Choice", name: "Multiple Choice"}, 
+        { value: "boolean", label: "True/False", name: "True/False"}
+    ]
+
+   
+    
   return (
     <form onSubmit={handleSubmit}>
-        <SettingSelect label="Number of questions" />
-        <SettingSelect label="Difficulty" />
-        <SettingSelect label="Category" />
+        <SettingSelect options={typeOptions} label="Type of questions" />
+        <SettingSelect options={difficultyOptions} label="Difficulty" />
+        <SettingSelect options={response.trivia_categories} label="Category" />
         <button type="submit">Submit</button>
     </form>
 
