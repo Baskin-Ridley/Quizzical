@@ -6,6 +6,9 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Settings from './pages/Settings';
 import QuestionScreen from './pages/QuestionScreen';
 import ResultScreen from './pages/ResultScreen';
+import { Container } from '@mui/material';
+
+
 function App() {
   console.log("Hi")
 
