@@ -9,21 +9,26 @@ function FetchData() {
   const [quizData, setQuizData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=5')
       .then(response => response.json())
       .then(data => {
         setQuizData(data.results);
-        
+        console.log(quizData)
       })
       
   }, []);
 
-  const mapQuiz = quizData.map((quiz, index) => {
+  const questionElements = quizData.map((quiz, index) => {
     return (
       <div key={index}>
-        <h1>{quiz.question}</h1>
-        <h2>{quiz.correct_answer}</h2>
-        <h2>{quiz.incorrect_answers}</h2>
+        <div className="question">
+          <h2>{quiz.question}</h2>
+        </div>
+        <div className="answers">
+          <h3>{quiz.correct_answer}</h3>
+          
+          <h3>{quiz.incorrect_answers}</h3>
+        </div>
       </div>
     )
   }
@@ -32,7 +37,7 @@ function FetchData() {
 
   return(
     <div>
-      {mapQuiz}
+      {questionElements}
     </div>
   ) 
 }
