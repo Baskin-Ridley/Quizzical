@@ -4,14 +4,16 @@
 import React from 'react'
 import axios from 'axios'
 
-// defualt url may need to be updated to https://opentdb.com/api.php test first then change later if not working
+// default url may need to be updated to https://opentdb.com/api.php test first then change later if not working
 
 axios.defaults.baseURL = 'https://opentdb.com/'
 
-export const useAxios = ({ url }) => {
+const useAxios = ({ url }) => {
     const [response, setResponse] = React.useState(null)
     const [error, setError] = React.useState("")
     const [loading, setLoading] = React.useState(true)
+
+    
 
     React.useEffect(() => {
         const fetchData = () => {
@@ -29,9 +31,9 @@ export const useAxios = ({ url }) => {
         fetchData();
     }, [url])
     
-  return (
-    <h1>temp</h1>
-  )
+    return { response, error, loading }
+
+  
 }
 
-
+export {useAxios}
