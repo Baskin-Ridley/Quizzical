@@ -7,20 +7,16 @@ import Settings from './pages/Settings';
 import QuestionScreen from './pages/QuestionScreen';
 import ResultScreen from './pages/ResultScreen';
 function App() {
-  FetchData();
+  console.log("Hi")
 
   return (
+    
     <Router>
+      
       <Routes>
-        <Route path="/">
-          <Settings />
-        </Route>
-        <Route path="/questions">
-          <QuestionScreen />
-        </Route>
-        <Route path="/results">
-          <ResultScreen />
-        </Route>
+        <Route path="/" element={<Settings />} />
+        <Route path="/question" element={<QuestionScreen />} />
+        <Route path="/result" element={<ResultScreen />} />
       </Routes>
     </Router>
   );
