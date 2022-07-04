@@ -18,7 +18,7 @@ function App() {
       <h1>Quizzical</h1>
           <Routes>
             <Route path="/" element={<Settings />} />
-            <Route path="/question" element={<QuestionScreen />} />
+            <Route path="/questions" element={<QuestionScreen />} />
             <Route path="/result" element={<ResultScreen />} />
           </Routes>
         
