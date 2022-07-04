@@ -11,11 +11,11 @@ const QuestionScreen = () => {
         score
     } = useSelector((state: any) => state);
     
-    console.log(score)
+    console.log({question_category, question_difficulty, question_type})
 
     let apiUrl = "/api.php?amount=10"
     const { response, loading } = useAxios ({ url: apiUrl });
-    console.log(response, loading)
+    
 
   return (
     <div>QuestionScreen</div>

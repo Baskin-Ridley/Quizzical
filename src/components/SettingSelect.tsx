@@ -1,6 +1,9 @@
+// @ts-nocheck
+
 
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { handleCategoryChange, handleDifficultyChange, handleTypeChange } from '../redux/actions';
 // This will be the form that the user will fill out to create a quiz
 
 const SettingSelect = (props: { label: any; options: any; }) => {
@@ -11,13 +14,13 @@ const SettingSelect = (props: { label: any; options: any; }) => {
         setValue(event.target.value);
         switch(label){
             case "Type of questions":
-                dispatch({ type: "SET_QUESTION_TYPE", payload: event.target.value });
+                dispatch(handleTypeChange(event.target.value));
                 break;
             case "Difficulty":
-                dispatch({ type: "SET_QUESTION_DIFFICULTY", payload: event.target.value });
+                dispatch(handleDifficultyChange(event.target.value));
                 break;
             case "Category":
-                dispatch({ type: "SET_QUESTION_CATEGORY", payload: event.target.value });
+                dispatch(handleCategoryChange(event.target.value));
                 break;
             default:
                 return;

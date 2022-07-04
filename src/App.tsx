@@ -6,12 +6,16 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Settings from './pages/Settings';
 import QuestionScreen from './pages/QuestionScreen';
 import ResultScreen from './pages/ResultScreen';
+import store from './redux/store';
 
 
 
 function App() {
-  console.log("Hi")
-
+  
+  store.subscribe(() => {
+    const newState = store.getState();
+    console.log(newState);
+});
   return (
     
     <Router>
