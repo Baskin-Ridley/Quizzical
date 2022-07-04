@@ -1,4 +1,4 @@
-
+//@ts-nocheck 
 
 import React from 'react'
 import SettingSelect from '../components/SettingSelect'
@@ -38,6 +38,7 @@ const Settings = () => {
     <form onSubmit={handleSubmit}>
         <SettingSelect options={typeOptions} label="Type of questions" />
         <SettingSelect options={difficultyOptions} label="Difficulty" />
+        
         <SettingSelect options={response.trivia_categories} label="Category" />
         <button type="submit">Submit</button>
     </form>

@@ -1,4 +1,4 @@
-cosnt initialState = {
+const initialState = {
     question_category: "",
     question_type: "",
     question_difficulty: "",
@@ -6,5 +6,8 @@ cosnt initialState = {
     score: 0
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: any) => {
+    return state;
 }
+
+export { reducer as default };
