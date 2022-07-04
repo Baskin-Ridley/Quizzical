@@ -3,13 +3,16 @@
 import React from 'react'
 import SettingSelect from '../components/SettingSelect'
 import { useAxios } from '../hooks/useAxios'
+import { useNavigate } from 'react-router-dom'
 const Settings = () => {
-    
+    const navigate = useNavigate()
     const { response, error, loading } = useAxios ({ url: "/api_category.php" });
     console.log(response, error, loading)
+    
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        console.log("Submitted")
+        
+        navigate("/questions")
     }
 
     //Consider coming back to add a loading svg here
