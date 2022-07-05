@@ -33,7 +33,24 @@ const QuestionScreen = () => {
     const { response, loading } = useAxios ({ url: apiUrl });
     const [questions, setQuestions] = React.useState([]);
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
+    const [options, setOptions] = React.useState([]);
+
     
+    
+
+    React.useEffect(() => {
+        if (response?.results.length) {
+            const question = response.results[currentQuestion];
+            let answers = [...question.incorrect_answers];
+            answers.push(question.correct_answer);
+            answers = answers.sort(() => Math.random() - 0.5);
+            setOptions(answers);
+            setQuestions(response.results);
+        }
+    }, [response])
+
+    
+
 
     console.log("hello", response)
 
