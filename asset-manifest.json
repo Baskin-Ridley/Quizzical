@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ea69997.css",
-    "main.js": "/static/js/main.52dbf950.js",
-    "static/js/787.0c3f432a.chunk.js": "/static/js/787.0c3f432a.chunk.js",
-    "index.html": "/index.html",
-    "main.3ea69997.css.map": "/static/css/main.3ea69997.css.map",
-    "main.52dbf950.js.map": "/static/js/main.52dbf950.js.map",
-    "787.0c3f432a.chunk.js.map": "/static/js/787.0c3f432a.chunk.js.map"
+    "main.css": "/Quizzical/static/css/main.3ea69997.css",
+    "main.js": "/Quizzical/static/js/main.dc7e7bff.js",
+    "static/js/787.0c3f432a.chunk.js": "/Quizzical/static/js/787.0c3f432a.chunk.js",
+    "index.html": "/Quizzical/index.html",
+    "main.3ea69997.css.map": "/Quizzical/static/css/main.3ea69997.css.map",
+    "main.dc7e7bff.js.map": "/Quizzical/static/js/main.dc7e7bff.js.map",
+    "787.0c3f432a.chunk.js.map": "/Quizzical/static/js/787.0c3f432a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ea69997.css",
-    "static/js/main.52dbf950.js"
+    "static/js/main.dc7e7bff.js"
   ]
 }
