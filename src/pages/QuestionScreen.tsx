@@ -55,7 +55,7 @@ const QuestionScreen = () => {
             setChoices(answers);
             console.log("Question Choices",choices)
         }
-    }, [response, currentQuestion, ])
+    }, [response, currentQuestion ])
 
     /* First attempt at mixing order just crashes the app 
     
