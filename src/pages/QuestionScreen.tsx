@@ -82,7 +82,8 @@ const QuestionScreen = () => {
     
     function handleClickAnswer(event: { target: { value: any; }; }){
         //update the score in the store each time the correct answer is chosen
-        
+        /*fun fact I came up with some very wacky code to solve this initially using a weird string concatenation 
+        and a mixture of strings and javascript... it did not work. However this does 🎉*/ 
         const question = response.results[currentQuestion];
         console.log("clicked", event.target.innerText, question.correct_answer);
         if (event.target.innerText === question.correct_answer) {
@@ -113,7 +114,7 @@ const QuestionScreen = () => {
 
 
         </div>
-            <div className="score">Score: {score}</div>
+            <div className="score">Score: {score} / {response.results.length}</div>
 
                     
     </div>
