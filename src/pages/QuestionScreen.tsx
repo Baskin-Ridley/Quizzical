@@ -6,6 +6,7 @@ import { useAxios } from '../hooks/useAxios';
 import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { handleScoreChange } from '../redux/actions';
+import { decode } from "html-entities"
 const QuestionScreen = () => {
     const {
         question_category,
@@ -104,11 +105,11 @@ const QuestionScreen = () => {
     
   return (
     <div>
-        <div className="question">{response.results[currentQuestion].question}</div>
+        <div className="question">{decode(response.results[currentQuestion].question)}</div>
         <div className="choices">
             
             {choices.map((choice: string, index: number) => {
-                return <button onClick={handleClickAnswer} key={index}>{choice}</button>
+                return <button onClick={handleClickAnswer} key={index}>{decode(choice)}</button>
             }
             )}
 
