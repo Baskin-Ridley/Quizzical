@@ -78,8 +78,10 @@ const QuestionScreen = () => {
     }
 
     function handleClickAnswer(){
-        console.log("clicked")
-        
+        if(currentQuestion < response.results.length - 1){
+            setCurrentQuestion(currentQuestion + 1);
+        }
+
 
     }
   return (
@@ -94,7 +96,7 @@ const QuestionScreen = () => {
 
 
         </div>
-            
+            <div className="score">Score: {score}</div>
 
                     
     </div>
