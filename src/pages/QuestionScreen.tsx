@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-nocheck
 //added to avoid null check
 import React from 'react'
 import { useSelector } from 'react-redux';
@@ -33,11 +33,10 @@ const QuestionScreen = () => {
     const { response, loading } = useAxios ({ url: apiUrl });
     const [questions, setQuestions] = React.useState([]);
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
-    const [options, setOptions] = React.useState([]);
-
+    const [answers, setAnswers] = React.useState([]);
     
+    /* First attempt at mixing order just crashes the app 
     
-
     React.useEffect(() => {
         if (response?.results.length) {
             const question = response.results[currentQuestion];
@@ -49,11 +48,12 @@ const QuestionScreen = () => {
         }
     }, [response])
 
-    
+    */
 
 
     console.log("hello", response)
 
+    
     if (loading) {
         return <div className="loading">Loading...</div>
     }
