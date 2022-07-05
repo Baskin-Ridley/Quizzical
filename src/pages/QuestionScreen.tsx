@@ -11,11 +11,29 @@ const QuestionScreen = () => {
         score
     } = useSelector((state: any) => state);
     
-    console.log({question_category, question_difficulty, question_type})
 
-    let apiUrl = "/api.php?amount=10"
+    console.log({question_category, question_difficulty, question_type})
+    //hard coded too 10 questions right now replace with
+    //"/api.php?amount=${amount_of_questions}&category=${question_category}&difficulty=${question_difficulty}&type=${question_type}"
+    let apiUrl = `/api.php?amount=${amount_of_questions}`
+    if (question_category) {
+        apiUrl = apiUrl.concat(`&category=${question_category}`)
+    }
+    if (question_difficulty) {
+        apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
+        //apiUrl += `&difficulty=${question_difficulty}`
+    }
+    if (question_type) {
+        apiUrl = apiUrl.concat(`&type=${question_type}`)
+        //apiUrl += `&type=${question_type}`
+    }
+
     const { response, loading } = useAxios ({ url: apiUrl });
-    
+    console.log("hello", response)
+
+    if (loading) {
+        return <div className="loading">Loading...</div>
+    }
 
   return (
     <div>QuestionScreen</div>

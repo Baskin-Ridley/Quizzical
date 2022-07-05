@@ -17,7 +17,7 @@ const Settings = () => {
 
     //Consider coming back to add a loading svg here
     if (loading) {
-        return <div>Loading...</div>
+        return <div className="loading">Loading...</div>
     }
     
     if (error) {
