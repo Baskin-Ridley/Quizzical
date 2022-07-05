@@ -14,7 +14,7 @@ function App() {
   
   store.subscribe(() => {
     const newState = store.getState();
-    console.log(newState);
+    console.log("updated state in store", newState);
 });
   return (
     

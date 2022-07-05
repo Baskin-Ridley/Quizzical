@@ -4,7 +4,8 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAxios } from '../hooks/useAxios';
 import {useNavigate} from 'react-router-dom'
-
+import { useDispatch } from 'react-redux';
+import { handleScoreChange } from '../redux/actions';
 const QuestionScreen = () => {
     const {
         question_category,
@@ -14,7 +15,7 @@ const QuestionScreen = () => {
         score
     } = useSelector((state: any) => state);
     const navigate = useNavigate()
-
+    const dispatch = useDispatch()
     console.log({question_category, question_difficulty, question_type})
     //hard coded too 10 questions right now replace with
     //"/api.php?amount=${amount_of_questions}&category=${question_category}&difficulty=${question_difficulty}&type=${question_type}"
@@ -79,13 +80,23 @@ const QuestionScreen = () => {
     }
 
     
-    function handleClickAnswer(){
+    function handleClickAnswer(event: { target: { value: any; }; }){
+        //update the score in the store each time the correct answer is chosen
+        
+        const question = response.results[currentQuestion];
+        console.log("clicked", event.target.innerText, question.correct_answer);
+        if (event.target.innerText === question.correct_answer) {
+            console.log("correct")
+            dispatch(handleScoreChange(score + 1))
+        }
+        
         if(currentQuestion < response.results.length - 1){
             setCurrentQuestion(currentQuestion + 1);
         }
         else{
             navigate("/results")
         }
+        
     }
 
 
