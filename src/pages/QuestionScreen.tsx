@@ -31,10 +31,29 @@ const QuestionScreen = () => {
     }
 
     const { response, loading } = useAxios ({ url: apiUrl });
-    const [questions, setQuestions] = React.useState([]);
-    const [currentQuestion, setCurrentQuestion] = React.useState(0);
-    const [answers, setAnswers] = React.useState([]);
     
+    const [currentQuestion, setCurrentQuestion] = React.useState(0);
+    const [choices, setChoices] = React.useState([]);
+    
+    const getRandomInt = (max: number) => {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+
+    React.useEffect(() => {
+        if (response?.results.length) {
+            const question = response.results[currentQuestion];
+            let answers = [...question.incorrect_answers];
+            answers.splice(
+                getRandomInt(question.incorrect_answers.length),
+                0,
+                question.correct_answer
+            );
+            setChoices(answers);
+            console.log("Question Choices",choices)
+        }
+    }, [response, currentQuestion, ])
+
     /* First attempt at mixing order just crashes the app 
     
     React.useEffect(() => {
@@ -58,9 +77,26 @@ const QuestionScreen = () => {
         return <div className="loading">Loading...</div>
     }
 
+    function handleClickAnswer(){
+        console.log("clicked")
+        
+
+    }
   return (
     <div>
         <div className="question">{response.results[currentQuestion].question}</div>
+        <div className="choices">
+            
+            {choices.map((choice: string, index: number) => {
+                return <button onClick={handleClickAnswer} key={index}>{choice}</button>
+            }
+            )}
+
+
+        </div>
+            
+
+                    
     </div>
   )
 }
