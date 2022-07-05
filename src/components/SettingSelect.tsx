@@ -1,5 +1,5 @@
 // @ts-nocheck
-
+//Added as there is a possibility of getting null
 
 import React from 'react'
 import { useDispatch } from 'react-redux';
