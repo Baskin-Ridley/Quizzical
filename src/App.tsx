@@ -19,13 +19,14 @@ function App() {
   return (
     
     <Router>
-      <h1>Quizzical</h1>
-          <Routes>
-            <Route path="/" element={<Settings />} />
-            <Route path="/questions" element={<QuestionScreen />} />
-            <Route path="/results" element={<ResultScreen />} />
-          </Routes>
+      <div className="App">
         
+            <Routes>
+              <Route path="/" element={<Settings />} />
+              <Route path="/questions" element={<QuestionScreen />} />
+              <Route path="/results" element={<ResultScreen />} />
+            </Routes>
+        </div>
     </Router>
   );
 }

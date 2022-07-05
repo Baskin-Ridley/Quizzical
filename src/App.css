@@ -1,53 +1,115 @@
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafafa;
 }
 
-.App-link {
-  color: #61dafb;
+/* Setting page */
+
+.settings {
+
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* FetchData component styling */
-
-.question {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.answers {
+.settingsForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
 }
+
+.quizButton {
+  /* rounded edges blue colour */
+  border-radius: 5px;
+  background-color: #9b3dc7;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.quizButton:hover {
+  filter: brightness(0.8);
+}
+
+.quizTitle {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.stinger {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.setting-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #fafafa;
+  margin-bottom: -1px;
+}
+
+.settingLabel {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.settingDropDown {
+  /* Consider adding dropdown arrow*/
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #fafafa;
+  
+  border-radius: 5px;
+
+}
+
+/* question page*/
+
+.questionScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafafa;
+
+}
+
+.questionButton {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 15px;
+  margin: 10px;
+  font-size: 1.2em;
+  font-family: 'Roboto', sans-serif;
+  
+  background-color: #fafafa;
+}
+.questionButton:hover {
+  background-color:#b824b0;
+  transition: 0.7s;
+  }
+
 

@@ -30,9 +30,9 @@ const SettingSelect = (props: { label: any; options: any; }) => {
     }
 
   return (
-    <div className="form">
-      <label>{label}</label>
-      <select value={value} onChange={handleChange} >
+    <div className="setting-form">
+      <label className="settingLabel">{label}</label>
+      <select className="settingDropDown" value={value} onChange={handleChange} >
         {options.map((option: { id: any, name: any}) => (
           <option key={option.id} value={option.name}>{option.name}</option>
         ))}

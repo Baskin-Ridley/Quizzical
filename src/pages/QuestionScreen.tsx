@@ -104,12 +104,12 @@ const QuestionScreen = () => {
 
     
   return (
-    <div>
-        <div className="question">{decode(response.results[currentQuestion].question)}</div>
+    <div className="questionScreen">
+        <h2 className="question">{decode(response.results[currentQuestion].question)}</h2>
         <div className="choices">
             
             {choices.map((choice: string, index: number) => {
-                return <button onClick={handleClickAnswer} key={index}>{decode(choice)}</button>
+                return <button className="questionButton"onClick={handleClickAnswer} key={index}>{decode(choice)}</button>
             }
             )}
 

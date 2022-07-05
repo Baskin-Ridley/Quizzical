@@ -38,14 +38,22 @@ const Settings = () => {
    
     
   return (
-    <form onSubmit={handleSubmit}>
-        <SettingSelect options={typeOptions} label="Type of questions" />
-        <SettingSelect options={difficultyOptions} label="Difficulty" />
-        
-        <SettingSelect options={response.trivia_categories} label="Category" />
-        <button type="submit">Submit</button>
-    </form>
-
+      <div className="settings">
+        <h1 className="quizTitle">Quizzical</h1>
+        <p className="stinger">Answer the questions to test your knowledge!</p>
+        <form className="settingsForm" onSubmit={handleSubmit}>
+            <div>
+                <SettingSelect options={typeOptions} label="Type of questions: " />
+                <SettingSelect options={difficultyOptions} label="Difficulty: " />
+                
+                <SettingSelect options={response.trivia_categories} label="Category: " />
+            </div>
+            <div>
+                <button className="quizButton"type="submit">Start Quizzing</button>
+            </div>
+            
+        </form>
+    </div>
   )
 }
 
