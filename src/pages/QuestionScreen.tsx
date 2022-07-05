@@ -29,6 +29,10 @@ const QuestionScreen = () => {
     }
 
     const { response, loading } = useAxios ({ url: apiUrl });
+    const [questions, setQuestions] = React.useState([]);
+    const [currentQuestion, setCurrentQuestion] = React.useState(0);
+    
+
     console.log("hello", response)
 
     if (loading) {
