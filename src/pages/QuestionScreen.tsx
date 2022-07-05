@@ -3,6 +3,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAxios } from '../hooks/useAxios';
+import {useNavigate} from 'react-router-dom'
 
 const QuestionScreen = () => {
     const {
@@ -12,7 +13,7 @@ const QuestionScreen = () => {
         amount_of_questions,
         score
     } = useSelector((state: any) => state);
-    
+    const navigate = useNavigate()
 
     console.log({question_category, question_difficulty, question_type})
     //hard coded too 10 questions right now replace with
@@ -77,13 +78,18 @@ const QuestionScreen = () => {
         return <div className="loading">Loading...</div>
     }
 
+    
     function handleClickAnswer(){
         if(currentQuestion < response.results.length - 1){
             setCurrentQuestion(currentQuestion + 1);
         }
-
-
+        else{
+            navigate("/results")
+        }
     }
+
+
+    
   return (
     <div>
         <div className="question">{response.results[currentQuestion].question}</div>
