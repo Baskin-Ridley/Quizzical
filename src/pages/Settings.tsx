@@ -4,6 +4,7 @@ import React from 'react'
 import SettingSelect from '../components/SettingSelect'
 import { useAxios } from '../hooks/useAxios'
 import { useNavigate } from 'react-router-dom'
+import loadingImage from '../assets/90-ring.svg'
 const Settings = () => {
     const navigate = useNavigate()
     const { response, error, loading } = useAxios ({ url: "/api_category.php" });
@@ -17,7 +18,9 @@ const Settings = () => {
 
     //Consider coming back to add a loading svg here
     if (loading) {
-        return <div className="loading">Loading...</div>
+        return <div className="loading">
+            <img src={loadingImage} alt="loading" />
+        </div>
     }
     
     if (error) {

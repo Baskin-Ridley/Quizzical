@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { handleScoreChange } from '../redux/actions';
 import { decode } from "html-entities"
+import loadingImage from "../assets/90-ring.svg"
 const QuestionScreen = () => {
     const {
         question_category,
@@ -77,7 +78,9 @@ const QuestionScreen = () => {
 
     
     if (loading) {
-        return <div className="loading">Loading...</div>
+        return <div className="loading">
+            <img src={loadingImage} alt="loading" />
+        </div>
     }
 
     
