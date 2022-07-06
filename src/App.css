@@ -131,7 +131,7 @@
   background-color: #fafafa;
 }
 .questionButton:hover {
-  background-color:#4D5B9E;
+  padding: 15px 25px;
   transition: 0.7s;
   }
 

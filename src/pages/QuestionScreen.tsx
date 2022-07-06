@@ -90,16 +90,36 @@ const QuestionScreen = () => {
         and a mixture of strings and javascript... it did not work. However this does 🎉*/ 
         const question = response.results[currentQuestion];
         console.log("clicked", event.target.innerText, question.correct_answer);
+        
         if (event.target.innerText === question.correct_answer) {
             console.log("correct")
+            
+            event.target.style.backgroundColor = 'green';
             dispatch(handleScoreChange(score + 1))
+            setTimeout(function(){
+                event.target.style.backgroundColor = 'white';
+            }, 500)
+        }
+
+        else{
+            console.log("wrong")
+            event.target.style.backgroundColor = 'red';
+            setTimeout(function(){
+                event.target.style.backgroundColor = 'white';
+            }, 500)
         }
         
         if(currentQuestion < response.results.length - 1){
-            setCurrentQuestion(currentQuestion + 1);
+            setTimeout(function(){
+                setCurrentQuestion(currentQuestion + 1)
+            }, 500)
+            
         }
         else{
-            navigate("/results")
+            setTimeout(function(){
+                navigate("/results")
+            }, 500)
+            
         }
         
     }
