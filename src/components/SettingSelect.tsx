@@ -34,7 +34,7 @@ const SettingSelect = (props: { label: any; options: any; }) => {
       <label className="settingLabel">{label}</label>
       <select className="settingDropDown" value={value} onChange={handleChange} label={label} >
         {options.map((option: { id: any, name: any}) => (
-          <option key={option.id} value={option.name}>{option.name}</option>
+          <option key={option.id} value={option.value}>{option.name}</option>
         ))}
 
       </select>
