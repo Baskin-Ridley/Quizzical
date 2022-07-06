@@ -7,6 +7,7 @@ import {
 } from "./actionTypes"
 
 export const handleCategoryChange = (category: string) => {
+    
     return {
         type: CHANGE_CATEGORY,
         payload: category
@@ -14,9 +15,15 @@ export const handleCategoryChange = (category: string) => {
 }
 
 export const handleTypeChange = (type: string) => {
+    if (type === "Multiple Choice") {
+        return {
+            type: CHANGE_TYPE,
+            payload: "multiple"
+        }
+    }
     return {
         type: CHANGE_TYPE,
-        payload: type
+        payload: "boolean"
     }
 }
 
