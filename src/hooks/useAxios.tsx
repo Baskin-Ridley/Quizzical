@@ -6,7 +6,7 @@ import axios from 'axios'
 
 // default url may need to be updated to https://opentdb.com/api.php test first then change later if not working
 
-axios.defaults.baseURL = 'https://opentdb.com/'
+axios.defaults.baseURL = 'https://opentdb.com'
 
 const useAxios = ({ url }) => {
     const [response, setResponse] = React.useState(null)

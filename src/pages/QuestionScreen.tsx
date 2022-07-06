@@ -3,7 +3,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAxios } from '../hooks/useAxios';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { handleScoreChange } from '../redux/actions';
 import { decode } from "html-entities"
@@ -21,10 +21,12 @@ const QuestionScreen = () => {
     console.log({question_category, question_difficulty, question_type})
     //hard coded too 10 questions right now replace with
     //"/api.php?amount=${amount_of_questions}&category=${question_category}&difficulty=${question_difficulty}&type=${question_type}"
-    //let apiUrl = `/api.php?amount=${amount_of_questions}`
-    let apiUrl = `/api.php?amount=10`
+    let apiUrl = `/api.php?amount=5`;
+    console.log("url", apiUrl)
+    //let apiUrl = `/api.php?amount=10`
     if (question_category) {
         apiUrl = apiUrl.concat(`&category=${question_category}`);
+        console.log("url", apiUrl)
     }
     if (question_difficulty) {
         apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`);
@@ -35,7 +37,8 @@ const QuestionScreen = () => {
         //apiUrl += `&type=${question_type}`
     }
 
-    const { response, loading } = useAxios ({ url: apiUrl });
+    const { response, loading } = useAxios ({ url: apiUrl.toLowerCase() });
+    console.log("urlCheck", { url: apiUrl } )
     
     const [currentQuestion, setCurrentQuestion] = React.useState(0);
     const [choices, setChoices] = React.useState([]);
