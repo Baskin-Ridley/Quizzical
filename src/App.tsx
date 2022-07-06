@@ -16,7 +16,7 @@ function App() {
   store.subscribe(() => {
     const newState = store.getState();
     console.log("updated state in store", newState);
-});
+  });
   return (
     
     <BrowserRouter basename={process.env.PUBLIC_URL}>

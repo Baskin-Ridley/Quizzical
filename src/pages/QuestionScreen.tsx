@@ -21,16 +21,17 @@ const QuestionScreen = () => {
     console.log({question_category, question_difficulty, question_type})
     //hard coded too 10 questions right now replace with
     //"/api.php?amount=${amount_of_questions}&category=${question_category}&difficulty=${question_difficulty}&type=${question_type}"
-    let apiUrl = `/api.php?amount=${amount_of_questions}`
+    //let apiUrl = `/api.php?amount=${amount_of_questions}`
+    let apiUrl = `/api.php?amount=10`
     if (question_category) {
-        apiUrl = apiUrl.concat(`&category=${question_category}`)
+        apiUrl = apiUrl.concat(`&category=${question_category}`);
     }
     if (question_difficulty) {
-        apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
+        apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`);
         //apiUrl += `&difficulty=${question_difficulty}`
     }
     if (question_type) {
-        apiUrl = apiUrl.concat(`&type=${question_type}`)
+        apiUrl = apiUrl.concat(`&type=${question_type}`);
         //apiUrl += `&type=${question_type}`
     }
 

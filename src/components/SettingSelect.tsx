@@ -1,4 +1,4 @@
-// @ts-nocheck
+//@ts-nocheck
 //Added as there is a possibility of getting null
 
 import React from 'react'
@@ -11,28 +11,28 @@ const SettingSelect = (props: { label: any; options: any; }) => {
     const [value, setValue] = React.useState('');
     const dispatch = useDispatch();
     const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+        console.log(label)
         setValue(event.target.value);
-        switch(label){
-            case "Type of questions":
+        switch (label){
+            case "Type of questions: ":
+                console.log("Type of questions", event.target.value)
                 dispatch(handleTypeChange(event.target.value));
                 break;
-            case "Difficulty":
+            case "Difficulty: ":
                 dispatch(handleDifficultyChange(event.target.value));
                 break;
-            case "Category":
+            case "Category: ":
                 dispatch(handleCategoryChange(event.target.value));
                 break;
             default:
-                return;
+                console.log("Error");
         }
-
-
     }
 
   return (
     <div className="setting-form">
       <label className="settingLabel">{label}</label>
-      <select className="settingDropDown" value={value} onChange={handleChange} >
+      <select className="settingDropDown" value={value} onChange={handleChange} label={label} >
         {options.map((option: { id: any, name: any}) => (
           <option key={option.id} value={option.name}>{option.name}</option>
         ))}
