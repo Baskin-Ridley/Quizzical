@@ -1,5 +1,4 @@
 //@ts-nocheck
-//added to avoid null check
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAxios } from '../hooks/useAxios';
@@ -19,22 +18,17 @@ const QuestionScreen = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     console.log({question_category, question_difficulty, question_type})
-    //hard coded too 10 questions right now replace with
-    //"/api.php?amount=${amount_of_questions}&category=${question_category}&difficulty=${question_difficulty}&type=${question_type}"
+   
     let apiUrl = `/api.php?amount=5`;
     console.log("url", apiUrl)
-    //let apiUrl = `/api.php?amount=10`
     if (question_category) {
         apiUrl = apiUrl.concat(`&category=${question_category}`);
-        console.log("url", apiUrl)
     }
     if (question_difficulty) {
         apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`);
-        //apiUrl += `&difficulty=${question_difficulty}`
     }
     if (question_type) {
         apiUrl = apiUrl.concat(`&type=${question_type}`);
-        //apiUrl += `&type=${question_type}`
     }
 
     const { response, loading } = useAxios ({ url: apiUrl.toLowerCase() });
@@ -62,20 +56,7 @@ const QuestionScreen = () => {
         }
     }, [ response, currentQuestion ])
 
-    /* First attempt at mixing order just crashes the app 
     
-    React.useEffect(() => {
-        if (response?.results.length) {
-            const question = response.results[currentQuestion];
-            let answers = [...question.incorrect_answers];
-            answers.push(question.correct_answer);
-            answers = answers.sort(() => Math.random() - 0.5);
-            setOptions(answers);
-            setQuestions(response.results);
-        }
-    }, [response])
-
-    */
 
 
     console.log("hello", response)

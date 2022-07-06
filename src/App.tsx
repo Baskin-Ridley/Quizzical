@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import yellowBlob from "./assets/blobs1.svg";
 import blueBlob from "./assets/blobs2.svg";
 import './App.css';
