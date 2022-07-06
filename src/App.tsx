@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
+import yellowBlob from "./assets/blobs1.svg";
+import blueBlob from "./assets/blobs2.svg";
 import './App.css';
-
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Router, Route, Routes} from 'react-router-dom';
 import Settings from './pages/Settings';
 import QuestionScreen from './pages/QuestionScreen';
 import ResultScreen from './pages/ResultScreen';
@@ -18,16 +19,21 @@ function App() {
 });
   return (
     
-    <Router>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
-        
+        <div className="topRightCircle">
+          <img src={yellowBlob} alt="yellow blob" />
+        </div>
+        <div className="bottomLeftCircle">
+          <img src={blueBlob} alt="blue blob" />
+        </div>
             <Routes>
               <Route path="/" element={<Settings />} />
               <Route path="/questions" element={<QuestionScreen />} />
               <Route path="/results" element={<ResultScreen />} />
             </Routes>
         </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
