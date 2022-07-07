@@ -16,8 +16,8 @@ React-Router
 Figma
 
 ## Screenshots
-![src/screenshots/Settings.PNG]
+![settings page](https://raw.githubusercontent.com/IPierrot123/Quizzical/main/src/screenshots/Settings.PNG)
 
-![src/screenshots/Question.PNG]
+![questions page](https://raw.githubusercontent.com/IPierrot123/Quizzical/main/src/screenshots/Question.PNG)
 
-![src/screenshots/Results.PNG]
+![results page](https://raw.githubusercontent.com/IPierrot123/Quizzical/main/src/screenshots/Results.PNG)
