@@ -6,14 +6,14 @@ This project uses the [Open Trivia Database API](https://opentdb.com/) to provid
 ## Built With
 The main goal of this project was to learn many new systems which is why I used a wide variety of frameworks and other resources including:
 
-HTML
-CSS
-JavaScript
-TypeScript
-React
-React-Redux
-React-Router
-Figma
+- HTML5
+- CSS3
+- JavaScript
+- TypeScript
+- React
+- React-Redux
+- React-Router
+- Figma
 
 ## Screenshots
 ![settings page](https://raw.githubusercontent.com/IPierrot123/Quizzical/main/src/screenshots/Settings.PNG)
