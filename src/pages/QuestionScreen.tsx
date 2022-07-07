@@ -8,6 +8,7 @@ import { handleScoreChange } from '../redux/actions';
 import { decode } from "html-entities"
 import loadingImage from "../assets/90-ring.svg"
 const QuestionScreen = () => {
+    const [canClick, setCanClick] = React.useState(true);
     const {
         question_category,
         question_type,
@@ -76,13 +77,15 @@ const QuestionScreen = () => {
         const question = response.results[currentQuestion];
         console.log("clicked", event.target.innerText, question.correct_answer);
         
-        if (event.target.innerText === question.correct_answer) {
+        
+        if (canClick && event.target.innerText === question.correct_answer) {
             console.log("correct")
-            
+            setCanClick(false)
             event.target.style.backgroundColor = 'green';
             dispatch(handleScoreChange(score + 1))
             setTimeout(function(){
                 event.target.style.backgroundColor = 'white';
+                setCanClick(true)
             }, 500)
         }
 
@@ -95,13 +98,17 @@ const QuestionScreen = () => {
         }
         
         if(currentQuestion < response.results.length - 1){
+
             setTimeout(function(){
                 setCurrentQuestion(currentQuestion + 1)
+                
             }, 500)
             
         }
         else{
+            
             setTimeout(function(){
+                setCanClick(true)
                 navigate("/results")
             }, 500)
             
