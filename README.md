@@ -16,8 +16,8 @@ React-Router
 Figma
 
 ## Screenshots
-![[src/screenshots/Settings.PNG]]
+![src/screenshots/Settings.PNG]
 
-![[src/screenshots/Question.PNG]]
+![src/screenshots/Question.PNG]
 
-![[src/screenshots/Results.PNG]]
+![src/screenshots/Results.PNG]
