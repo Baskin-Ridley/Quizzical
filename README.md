@@ -1,6 +1,6 @@
 # Quizzical
 
-https://ipierrot123.github.io/Quizzical/
+https://baskin-ridley.github.io/Quizzical/
 
 This is a quiz web-app that I completed as the final solo project for the [Scrimba React course](https://scrimba.com/learn/learnreact) , which taught me **React States**, **React Hooks**, and **React Forms** as well as various other important React skills.
 
